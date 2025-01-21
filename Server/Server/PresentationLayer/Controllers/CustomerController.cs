@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Server.Models.DTOs;
-using Server.Services;
+using Server.ApplicationLayer.DTOs;
+using Server.ApplicationLayer.Interfaces;
 
-namespace Server.Controllers;
+namespace Server.PresentationLayer.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -26,20 +26,20 @@ public class CustomerController(ICustomerService customerService) : ControllerBa
     public async Task<IActionResult> CreateCustomer(CustomerDto customerDto)
     {
         await customerService.CreateCustomerAsync(customerDto);
-        return CreatedAtAction(nameof(GetCustomerById), new { id = customerDto.Email }, customerDto);
+        return CreatedAtAction(nameof(GetCustomerById), new { id = customerDto.Email }, new { message = "Created successfully" });
     }
 
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateCustomer(int id, CustomerDto customerDto)
     {
         await customerService.UpdateCustomerAsync(id, customerDto);
-        return NoContent();
+        return Ok(new { message = "Updated successfully" });
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteCustomer(int id)
     {
         await customerService.DeleteCustomerAsync(id);
-        return NoContent();
+        return Ok(new { message = "Deleted successfully" });
     }
 }

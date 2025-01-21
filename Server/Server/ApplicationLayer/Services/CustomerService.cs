@@ -1,8 +1,8 @@
-﻿using Server.Models.DTOs;
-using Server.Models.Entities;
-using Server.Repositories;
+﻿using Server.ApplicationLayer.DTOs;
+using Server.ApplicationLayer.Interfaces;
+using Server.DomainLayer.Models.Entities;
 
-namespace Server.Services;
+namespace Server.ApplicationLayer.Services;
 
 public class CustomerService(ICustomerRepository customerRepository) : ICustomerService
 {
@@ -18,16 +18,26 @@ public class CustomerService(ICustomerRepository customerRepository) : ICustomer
 
     public async Task CreateCustomerAsync(CustomerDto customerDto)
     {
+        // Validate that the provided UserId exists in the database
+        var user = await customerRepository.GetUserByIdAsync(customerDto.UserId);
+        if (user == null)
+        {
+            throw new ArgumentException("Invalid UserId provided.");
+        }
+
+        // Create the new customer with the validated UserId
         var customer = new Customer
         {
             FirstName = customerDto.FirstName,
             LastName = customerDto.LastName,
             Phone = customerDto.Phone,
-            Email = customerDto.Email
+            Email = customerDto.Email,
+            UserId = customerDto.UserId
         };
 
         await customerRepository.CreateCustomerAsync(customer);
     }
+
 
     public async Task UpdateCustomerAsync(int id, CustomerDto customerDto)
     {

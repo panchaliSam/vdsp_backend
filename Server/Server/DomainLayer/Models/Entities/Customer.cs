@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Server.Models.Entities
+namespace Server.DomainLayer.Models.Entities
 {
     public class Customer
     {
@@ -16,6 +16,7 @@ namespace Server.Models.Entities
 
         [Column("user_id")] public int UserId { get; set; }
 
-        [ForeignKey("UserId")] public User User { get; set; } = new User();
+        [ForeignKey("UserId")]
+        public User? User { get; set; } 
     }
 }

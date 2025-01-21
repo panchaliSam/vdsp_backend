@@ -1,7 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using Server.Data;
-using Server.Repositories;
-using Server.Services;
+using Server.ApplicationLayer.Interfaces;
+using Server.ApplicationLayer.Services;
+using Server.InfrastructureLayer.Data;
+using Server.InfrastructureLayer.Repositories;
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,9 +18,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // Register repositories
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 // Register services
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 // Add AutoMapper for mapping DTOs and entities
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -28,6 +33,12 @@ builder.Services.AddControllers();
 // Add Swagger for API documentation
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Initialize Firebase Admin SDK
+FirebaseApp.Create(new AppOptions
+{
+    Credential = GoogleCredential.FromFile("firebase-adminsdk.json")
+});
 
 var app = builder.Build();
 

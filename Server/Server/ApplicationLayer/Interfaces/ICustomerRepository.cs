@@ -1,6 +1,6 @@
-﻿using Server.Models.Entities;
+﻿using Server.DomainLayer.Models.Entities;
 
-namespace Server.Repositories;
+namespace Server.ApplicationLayer.Interfaces;
 
 public interface ICustomerRepository
 {
@@ -9,4 +9,5 @@ public interface ICustomerRepository
     Task CreateCustomerAsync(Customer customer);
     Task UpdateCustomerAsync(Customer customer);
     Task DeleteCustomerAsync(int id);
+    Task<User?> GetUserByIdAsync(int userId);
 }
