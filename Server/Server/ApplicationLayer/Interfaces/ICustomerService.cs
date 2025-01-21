@@ -1,7 +1,7 @@
-﻿using Server.Models.DTOs;
-using Server.Models.Entities;
+﻿using Server.ApplicationLayer.DTOs;
+using Server.DomainLayer.Models.Entities;
 
-namespace Server.Services;
+namespace Server.ApplicationLayer.Interfaces;
 
 public interface ICustomerService
 {

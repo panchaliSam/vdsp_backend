@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Server.Models.Entities;
+using Server.DomainLayer.Models.Entities;
 
 // Adjust the namespace as needed
 
-namespace Server.Data;
+namespace Server.InfrastructureLayer.Data;
 
 public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
 {

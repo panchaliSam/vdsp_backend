@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Server.Data;
-using Server.Models.Entities;
+using Server.ApplicationLayer.Interfaces;
+using Server.DomainLayer.Models.Entities;
+using Server.InfrastructureLayer.Data;
 
-namespace Server.Repositories;
+namespace Server.InfrastructureLayer.Repositories;
 
 public class CustomerRepository(ApplicationDbContext context) : ICustomerRepository
 {
@@ -37,4 +38,9 @@ public class CustomerRepository(ApplicationDbContext context) : ICustomerReposit
             await context.SaveChangesAsync();
         }
     }
+    public async Task<User?> GetUserByIdAsync(int userId)
+    {
+        return await context.User.FirstOrDefaultAsync(u => u.UserId == userId);
+    }
+
 }
