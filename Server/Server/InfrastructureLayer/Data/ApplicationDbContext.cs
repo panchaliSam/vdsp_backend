@@ -10,6 +10,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     // DbSets for User and Customer entities
     public DbSet<User> User { get; set; }
     public DbSet<Customer> Customer { get; set; }
+    public DbSet<Role> Role { get; set; }
 
     // Override OnModelCreating if you need to add custom configurations for your models
     protected override void OnModelCreating(ModelBuilder modelBuilder)
