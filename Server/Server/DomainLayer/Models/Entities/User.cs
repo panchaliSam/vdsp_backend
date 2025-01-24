@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Server.DomainLayer.Models.Entities
 {
     public class User
     {
-        [Column("user_id")] public int UserId { get; set; }
+        [Key][Column("user_id")] public int UserId { get; set; }
 
         [Column("email")] public string Email { get; set; } = string.Empty;
 
