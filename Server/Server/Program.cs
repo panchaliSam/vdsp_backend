@@ -20,11 +20,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+builder.Services.AddScoped<ITeamRepository, TeamRepository>();
 
 // Register services
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<ITeamService, TeamService>();
 
 // Add AutoMapper for mapping DTOs and entities
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

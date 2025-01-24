@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Server.ApplicationLayer.DTOs;
 using Server.ApplicationLayer.Interfaces;
-using Server.DomainLayer.Models.Entities;
 
 namespace Server.PresentationLayer.Controllers;
 
