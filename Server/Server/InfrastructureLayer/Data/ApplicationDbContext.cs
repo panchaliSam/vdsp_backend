@@ -12,6 +12,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Customer> Customer { get; set; }
     public DbSet<Role> Role { get; set; }
     public DbSet<Team> Team { get; set; }
+    public DbSet<Package> Package { get; set; }
 
     // Override OnModelCreating if you need to add custom configurations for your models
     protected override void OnModelCreating(ModelBuilder modelBuilder)
