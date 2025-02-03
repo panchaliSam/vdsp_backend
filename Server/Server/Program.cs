@@ -22,6 +22,7 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<ITeamRepository, TeamRepository>();
 builder.Services.AddScoped<IPackageRepository, PackageRepository>();
+builder.Services.AddScoped<IStaffRepository, StaffRepository>();
 
 // Register services
 builder.Services.AddScoped<ICustomerService, CustomerService>();
@@ -29,6 +30,7 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<ITeamService, TeamService>();
 builder.Services.AddScoped<IPackageService, PackageService>();
+builder.Services.AddScoped<IStaffService, StaffService>();
 
 // Add AutoMapper for mapping DTOs and entities
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
