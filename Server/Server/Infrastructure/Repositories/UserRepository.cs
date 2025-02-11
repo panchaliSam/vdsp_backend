@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Server.Application.Interfaces;
 using Server.ApplicationLayer.Interfaces;
 using Server.DomainLayer.Models.Entities;
 using Server.InfrastructureLayer.Data;

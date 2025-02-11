@@ -5,6 +5,7 @@ using Server.InfrastructureLayer.Data;
 using Server.InfrastructureLayer.Repositories;
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
+using Server.Application.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,10 +46,26 @@ builder.Services.AddSwaggerGen();
 // Initialize Firebase Admin SDK
 FirebaseApp.Create(new AppOptions
 {
-    Credential = GoogleCredential.FromFile("firebase-adminsdk.json")
+    Credential = GoogleCredential.FromFile(Path.Combine(AppContext.BaseDirectory, "firebase-adminsdk.json"))
 });
 
+
+// Add CORS policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", policy =>
+            policy.WithOrigins("http://localhost:5173") 
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials() 
+    );
+});
+
+
+// Build the application
 var app = builder.Build();
+
+app.UseCors("CorsPolicy");
 
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
@@ -57,6 +74,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Use HTTPS redirection
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

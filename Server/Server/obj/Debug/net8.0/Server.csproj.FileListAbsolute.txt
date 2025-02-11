@@ -118,3 +118,6 @@ D:\Projects\vdsp_SDP\vdsp_backend\Server\Server\bin\Debug\net8.0\runtimes\win\li
 D:\Projects\vdsp_SDP\vdsp_backend\Server\Server\bin\Debug\net8.0\Server.staticwebassets.endpoints.json
 D:\Projects\vdsp_SDP\vdsp_backend\Server\Server\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 D:\Projects\vdsp_SDP\vdsp_backend\Server\Server\obj\Debug\net8.0\staticwebassets\msbuild.Server.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\Projects\vdsp_SDP\vdsp_backend\Server\Server\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Projects\vdsp_SDP\vdsp_backend\Server\Server\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Projects\vdsp_SDP\vdsp_backend\Server\Server\bin\Debug\net8.0\Microsoft.Extensions.Options.dll

@@ -9,6 +9,7 @@
     <ItemGroup>
         <PackageReference Include="AutoMapper" Version="13.0.1" />
         <PackageReference Include="FirebaseAdmin" Version="3.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.3.0" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2">
@@ -20,12 +21,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="ApplicationLayer\Helpers\" />
-      <Folder Include="ApplicationLayer\Mappings\" />
-      <Folder Include="DomainLayer\" />
-      <Folder Include="InfrastructureLayer\Configurations\" />
-      <Folder Include="InfrastructureLayer\Middleware\" />
-      <Folder Include="PresentationLayer\" />
+      <Folder Include="Application\Helpers\" />
+      <Folder Include="Application\Mappings\" />
+      <Folder Include="Domain\" />
+      <Folder Include="Infrastructure\Configurations\" />
+      <Folder Include="Infrastructure\Middleware\" />
+      <Folder Include="Presentation\" />
     </ItemGroup>
 
 </Project>
