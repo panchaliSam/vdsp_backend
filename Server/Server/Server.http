@@ -1,4 +1,4 @@
-@Server_HostAddress = http://localhost:5273
+@Server_HostAddress = http://localhost:2307
 
 GET {{Server_HostAddress}}/
 Accept: application/json

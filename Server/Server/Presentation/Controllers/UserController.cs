@@ -21,20 +21,4 @@ public class UserController(IUserService userService) : ControllerBase
             return BadRequest(new { Error = ex.Message });
         }
     }
-
-    [HttpPost("sign-in")]
-    public async Task<IActionResult> SignIn([FromBody] UserDto userDto)
-    {
-        try
-        {
-            var result = await userService.SignInAsync(userDto.Email, userDto.UserToken);
-            if (!result) return Unauthorized(new { Error = "User does not exist." });
-
-            return Ok(new { Success = true });
-        }
-        catch (Exception ex)
-        {
-            return BadRequest(new { Error = ex.Message });
-        }
-    }
 }

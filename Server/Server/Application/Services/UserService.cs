@@ -1,4 +1,5 @@
 ﻿using FirebaseAdmin.Auth;
+using Server.Application.Interfaces;
 using Server.ApplicationLayer.DTOs;
 using Server.ApplicationLayer.Interfaces;
 
