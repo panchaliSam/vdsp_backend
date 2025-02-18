@@ -1,12 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using Server.ApplicationLayer.Interfaces;
-using Server.ApplicationLayer.Services;
-using Server.InfrastructureLayer.Data;
-using Server.InfrastructureLayer.Repositories;
-using FirebaseAdmin;
-using Google.Apis.Auth.OAuth2;
 using Server.Application.Interfaces;
 using Server.Application.Services;
+using Server.Infrastructure.Data;
+using Server.Infrastructure.Repositories;
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
 
 var builder = WebApplication.CreateBuilder(args);
 

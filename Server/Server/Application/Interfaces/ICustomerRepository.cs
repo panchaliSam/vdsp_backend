@@ -1,6 +1,6 @@
-﻿using Server.DomainLayer.Models.Entities;
+﻿using Server.Domain.Models.Entities;
 
-namespace Server.ApplicationLayer.Interfaces;
+namespace Server.Application.Interfaces;
 
 public interface ICustomerRepository
 {

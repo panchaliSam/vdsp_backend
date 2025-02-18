@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Server.ApplicationLayer.DTOs;
-using Server.ApplicationLayer.Interfaces;
-using Server.ApplicationLayer.Services;
-using Server.DomainLayer.Models.Entities;
+using Server.Application.DTOs;
+using Server.Application.Interfaces;
 
-namespace Server.PresentationLayer.Controllers;
+namespace Server.Presentation.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
