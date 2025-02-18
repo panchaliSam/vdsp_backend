@@ -6,6 +6,7 @@ using Server.InfrastructureLayer.Repositories;
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using Server.Application.Interfaces;
+using Server.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
