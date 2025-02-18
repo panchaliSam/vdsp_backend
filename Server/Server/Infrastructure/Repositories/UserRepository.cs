@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Server.Application.Interfaces;
-using Server.ApplicationLayer.Interfaces;
-using Server.DomainLayer.Models.Entities;
-using Server.InfrastructureLayer.Data;
+using Server.Domain.Models.Entities;
+using Server.Infrastructure.Data;
 
-namespace Server.InfrastructureLayer.Repositories;
+namespace Server.Infrastructure.Repositories;
 
 public class UserRepository(ApplicationDbContext context) : IUserRepository
 {

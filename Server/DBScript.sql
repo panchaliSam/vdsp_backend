@@ -73,6 +73,11 @@ CREATE TABLE Installment (
     is_complete BOOLEAN DEFAULT 0
 );
 
+ALTER TABLE Payment
+ADD COLUMN transaction_id VARCHAR(255),
+ADD COLUMN payment_status ENUM('Pending', 'Completed', 'Failed', 'Cancelled') DEFAULT 'Pending';
+
+
 -- Adding Foreign Key for cus_id in Payment Table (references Customer table)
 ALTER TABLE Payment
 ADD CONSTRAINT FK_Payment_Customer

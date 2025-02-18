@@ -1,7 +1,7 @@
-﻿using Server.ApplicationLayer.DTOs;
-using Server.DomainLayer.Models.Entities;
+﻿using Server.Application.DTOs;
+using Server.Domain.Models.Entities;
 
-namespace Server.ApplicationLayer.Interfaces;
+namespace Server.Application.Interfaces;
 
 public interface ITeamService
 {

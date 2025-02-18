@@ -1,4 +1,4 @@
-﻿namespace Server.ApplicationLayer.DTOs
+﻿namespace Server.Application.DTOs
 {
     public class CustomerDto
     {

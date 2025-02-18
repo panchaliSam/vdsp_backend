@@ -1,8 +1,8 @@
-﻿using Server.ApplicationLayer.DTOs;
-using Server.ApplicationLayer.Interfaces;
-using Server.DomainLayer.Models.Entities;
+﻿using Server.Application.DTOs;
+using Server.Application.Interfaces;
+using Server.Domain.Models.Entities;
 
-namespace Server.ApplicationLayer.Services;
+namespace Server.Application.Services;
 
 public class RoleService(IRoleRepository roleRepository) : IRoleService
 {
