@@ -3,7 +3,7 @@ using Server.Application.Interfaces;
 using Server.ApplicationLayer.DTOs;
 using Server.ApplicationLayer.Interfaces;
 
-namespace Server.ApplicationLayer.Services;
+namespace Server.Application.Services;
 
 public class UserService(IUserRepository userRepository) : IUserService
 {
@@ -23,18 +23,7 @@ public class UserService(IUserRepository userRepository) : IUserService
 
         return await userRepository.AddUserAsync(userDto.Email, userDto.UserToken);
     }
-
-    public async Task<bool> SignInAsync(string email, string userToken)
-    {
-        bool isTokenValid = await VerifyFirebaseToken(userToken);
-        if (!isTokenValid)
-        {
-            throw new Exception("Invalid Firebase token.");
-        }
-
-        return await userRepository.IsUserExistsAsync(email);
-    }
-
+    
     private async Task<bool> VerifyFirebaseToken(string firebaseToken)
     {
         try
